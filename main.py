@@ -37,12 +37,12 @@ def sendData():
             guessedNumbers = []
 threads = []
 
-for i in range(20):
+for i in range(numberOfThreads):
     thread = threading.Thread(target=sendData, daemon=True)
     threads.append(thread)
 
-for i in range(20):
+for i in range(numberOfThreads):
     threads[i].start()
 
-for i in range(20):
+for i in range(numberOfThreads):
     threads[i].join()
